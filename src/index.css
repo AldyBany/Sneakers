@@ -157,6 +157,8 @@ img{
 
 .nav__logo{
     font-weight: var(--font-semi-bold);
+    font-size: 2.3rem;
+    
 }
 
 .nav__toggle, .nav__shop{
@@ -225,10 +227,11 @@ img{
 }
 
 .home__img{
+    margin-left: 20px;
     position: absolute;
     top: 1.5rem;
     max-width: initial;
-    width: 275px;
+    width: 375px;
     transform: var(--rotate-img);
 }
 
@@ -257,6 +260,7 @@ img{
     font-weight: var(--font-medium);
     border-radius: .5rem;
     transition: .3s;
+    cursor: pointer;
 }
 
 .button:hover{
@@ -268,6 +272,7 @@ img{
     color: var(--dark-color);
     font-weight: var(--font-bold);
     align-items: center;
+    cursor: pointer;
 }
 
 .button-icon{
@@ -300,7 +305,7 @@ img{
 .sneaker__sale{
     position: absolute;
     left: .5rem;
-    background-color: var(--dark-color);
+    background-color: #C32E2B;
     color: var(--white-color);
     padding: .25rem .5rem;
     border-radius: .25rem;
@@ -308,6 +313,9 @@ img{
     transform: rotate(-90deg);
     letter-spacing: .1rem;
 }
+
+
+
 
 .sneaker__img{
     width: 220px;
@@ -687,8 +695,9 @@ img{
     .home__container{
         height: 100vh;
         grid-template-columns: max-content max-content;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        padding: 0 2rem;
     }
 
     .home__sneaker{
@@ -696,15 +705,15 @@ img{
     }
 
     .home__shape{
-        width: 376px;
-        height: 376px;
+        width: 476px;
+        height: 476px;
     }
 
     .home__img{
-        width: 470px;
+        width: 670px;
         top: 3.5rem;
         right: 0;
-        left: -3rem;
+        left: -14rem;
 
     }
 

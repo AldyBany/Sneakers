@@ -30,7 +30,7 @@ const Product = () => {
                     <div className="gradient"></div>
                 </div>
                 <h1 className="nike">{product.name}</h1>
-                {/* <img src={product.media.source} alt="" className="logo"/> */}
+                <img src='./images/featured2.png' alt="" className="logo"/>
                 <a href="#" className="share"><i className="fas fa-share-alt"></i></a>
 
                 <img src="img/blue.png" alt="" className="shoe show"/>
@@ -43,7 +43,7 @@ const Product = () => {
             <div className="info">
                 <div className="shoeName">
                     <div>
-                        <h1 className="big">{product.name}</h1>
+                        <h1 className="big">running shoes</h1>
                         <span className="new">new</span>
                     </div>
                     <h3 className="small">Men's running shoes</h3>
@@ -73,10 +73,10 @@ const Product = () => {
                     </div>
                 </div>
                 <div className="buy-price">
-                    <div className="buy" onClick={handleAddTocart}><i className="fas fa-shopping-cart"></i>Add to card</div>
+                    <div className="buy" onClick={()=>handleAddTocart}><i className="fas fa-shopping-cart"></i>Add to card</div>
                     <div className="price">
                         <i className="fas fa-dollar-sign"></i>
-                        {/* <h1>{productDetails.price.formatted}</h1> */}
+                        <h1>149</h1>
                     </div>
                 </div>
             </div>

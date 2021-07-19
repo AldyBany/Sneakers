@@ -42,8 +42,9 @@ const Cart = () => {
 
   return (
     <Container>
+      <h4  style={{textAlign:'center',margin:'90px 0 30px',color:"#141414"}}>Your Shopping Cart</h4>
     
-      <Typography  variant="h3" gutterBottom>Your Shopping Cart</Typography>
+     
       { !cart.line_items.length ? renderEmptyCart() : renderCart() }
     </Container>
   );

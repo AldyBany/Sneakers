@@ -53,9 +53,11 @@ const Home = () => {
                 <div className="new__sneaker">
                     {products.slice(0,6).map((product)=>(
                         <div className="new__sneaker-card" key={product.id}>
-                            <img src={product.media.source} alt="" className="new__sneaker-img"/>
+                            <Link to={`/product/${product.id}`}>
+                                <img src={product.media.source} alt="" className="new__sneaker-img"/>
+                            </Link>
                             <div className="new__sneaker-overlay">
-                                <div className="button" onClick={handleAddTocart}>Add to Cart</div>
+                                <div className="button" onClick={()=>handleAddTocart(product.id,1)}>Add to Cart</div>
                             </div>
                         </div>
                     ))}
