@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Banner = () => {
     return (
@@ -13,7 +14,7 @@ const Banner = () => {
                     <span className="home__new">New in</span>
                     <h1 className="home__title">YEEZY BOOST<br/>SPLY - 350</h1>
                     <p className="home__description">Explore the new collections of sneakers</p>
-                    <a href="#" className="button">Explore now</a>
+                    <Link to="/products" className="button">Explore now</Link>
                 </div>
             </div>
         </section>

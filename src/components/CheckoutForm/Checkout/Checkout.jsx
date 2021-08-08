@@ -15,6 +15,7 @@ const Checkout = () => {
   const {cart, handleCaptureCheckout, order, errorMessage} = useContext(DataContext)
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [activeStep, setActiveStep] = useState(0);
+  const [isFinished,setIsFinished] = useState(false)
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
   const history = useHistory();
@@ -38,11 +39,17 @@ const Checkout = () => {
     }
   }, [cart]);
 
-  const test = (data) => {
+  const next = (data) => {
     setShippingData(data);
 
     nextStep();
   };
+
+  const timeout = ()=>{
+    setTimeout(()=>{
+      setIsFinished(true)
+    },3000)
+  }
 
   let Confirmation = () => (order.customer ? (
     <>
@@ -54,7 +61,18 @@ const Checkout = () => {
       <br />
       <Link  className=".product__rbtn" to="/">Back to home</Link>
     </>
-  ) : (
+  ) : isFinished ? (
+    <>
+    <div>
+      <Typography variant="h5">Thank you for your purchase!</Typography>
+      <Divider className={classes.divider}/>
+
+    </div>
+    <br/>
+   
+    <Link  className=".product__rbtn" to="/">Back to home</Link>
+    </>
+  ):(
     <div className={classes.spinner}>
       <CircularProgress />
     </div>
@@ -71,8 +89,8 @@ const Checkout = () => {
   }
 
   const Form = () => (activeStep === 0
-    ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} />
-    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={handleCaptureCheckout} />);
+    ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} next={next} />
+    : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={handleCaptureCheckout} timeout={timeout} />);
 
   return (
     <>

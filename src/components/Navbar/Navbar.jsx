@@ -19,23 +19,30 @@ const Navbar = () => {
             <div className="nav__menu" id="nav-menu">
                 <ul className="nav__list">
                     <li className="nav__item"><Link to="/" className="nav__link active">Home</Link></li>
-                    <li className="nav__item"><Link to="#featured" className="nav__link">Featured</Link></li>
-                    <li className="nav__item"><Link to="#women" className="nav__link">Women</Link></li>
-                    <li className="nav__item"><Link to="#new" className="nav__link">New Collection</Link></li>
+                    <li className="nav__item"><a href="#featured" className="nav__link">Featured</a></li>
+                    <li className="nav__item"><a href="#women" className="nav__link">Women</a></li>
+                    <li className="nav__item"><a href="#new" className="nav__link">New Collection</a></li>
                     <li className="nav__item"><Link to="/products" className="nav__link">Shop</Link></li>
     
                 </ul>
             </div>
 
           
-            {   location.pathname !== "/cart" && (
-
-                    <IconButton component={Link} aria-label="Add to Cart" to="/cart">
-                        <Badge badgeContent={cart.total_items} primary="error">
-                            <i className="bx bx-shopping-bag"></i>
-                        </Badge>
+            {   location.pathname !=="/cart" && (
+                <>
+                {
+                    location.pathname !== "/checkout" &&  (
+                        <IconButton component={Link} aria-label="Add to Cart" to="/cart">
+                            <Badge badgeContent={cart.total_items} primary="error">
+                                <i className="bx bx-shopping-bag"></i>
+                            </Badge>
                         
-                    </IconButton>
+                        </IconButton>
+                    )
+                }
+                </>
+
+                    
                 )
             }
 
